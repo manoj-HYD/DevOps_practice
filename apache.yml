@@ -19,6 +19,9 @@
       copy:
         dest: /var/www/html/info.php
         content: <?php phpinfo(); ?>
+      notify:
+        - restart apache2 service
+  handlers:
     - name: restart apache2 service
       service:
         name: apache2
